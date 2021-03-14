@@ -1,0 +1,23 @@
+server:
+  port: 10010
+
+spring:
+  application:
+    name: base-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #默认为false，设为true便开启通过服务中心的自动根据 serviceId 创建路由的功能
+      routes:
+        - id: service-acl
+        # 在gateway中配置uri配置有三种方式，包括
+        # 第一种：ws(websocket)方式: uri: ws://localhost:9000
+        # 第二种：http方式: uri: http://localhost:8130/
+        # 第三种：lb(注册中心中服务名字)方式: uri: lb://brilliance-consumer
+          uri: lb://service-acl
+          predicates:
+            - Path=/*/acl/**
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848

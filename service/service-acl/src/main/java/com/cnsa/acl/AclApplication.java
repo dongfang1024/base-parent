@@ -9,10 +9,12 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EnableDiscoveryClient
 @ComponentScan("com.cnsa")
-@MapperScan("com")
+@MapperScan("com.cnsa.acl.mapper")
 public class AclApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(AclApplication.class, args);
     }
+
+
 }

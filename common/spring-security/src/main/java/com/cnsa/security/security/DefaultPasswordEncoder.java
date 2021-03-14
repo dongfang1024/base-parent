@@ -1,4 +1,4 @@
-package com.bat.security.security;
+package com.cnsa.security.security;
 
 import com.bat.base.utils.MD5;
 import org.springframework.security.crypto.password.PasswordEncoder;

@@ -1,4 +1,4 @@
-package com.bat.security.security;
+package com.cnsa.security.security;
 
 import com.bat.base.utils.ResponseUtil;
 import com.bat.base.vo.R;

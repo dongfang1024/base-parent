@@ -1,4 +1,4 @@
-package com.bat.security.entity;
+package com.cnsa.security.entity;
 
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;

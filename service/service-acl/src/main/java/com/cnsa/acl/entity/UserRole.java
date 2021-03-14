@@ -1,52 +1,32 @@
 package com.cnsa.acl.entity;
 
+
 import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.time.Instant;
 
-@ApiModel(value="User对象", description="用户表")
+@ApiModel("用户角色中间表")
+@Accessors(chain = true)
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("user")
-public class User implements Serializable {
+@TableName("user_role")
+public class UserRole implements Serializable {
 
-    private static final long serialVersionUID = -3956386597410281137L;
+    private static final long serialVersionUID = -2534607057852128687L;
 
-    /**
-     * 主键
-     */
-    @TableId(value="id", type= IdType.AUTO)
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    /**
-     * 用户名
-     */
-    private String username;
+    @ApiModelProperty
+    private Long userId;
 
-    /**
-     * 密码
-     */
-    private String password;
-
-    /**
-     * 昵称
-     */
-    private String nickname;
-
-    /**
-     * 头像
-     */
-    private String profilePicture;
-
-    /**
-     * 创建人
-     */
-    private String createdBy;
+    private Long roleId;
 
     /**
      * 创建时间
@@ -70,6 +50,5 @@ public class User implements Serializable {
      */
     @ApiModelProperty(value = "逻辑删除 1（true）已删除， 0（false）未删除")
     private Boolean deleted;
-
 
 }

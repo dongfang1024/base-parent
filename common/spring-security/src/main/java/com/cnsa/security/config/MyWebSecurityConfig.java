@@ -1,10 +1,10 @@
-package com.bat.security.config;
+package com.cnsa.security.config;
 
-import com.bat.security.filter.MyUsernamePasswordAuthenticationFilter;
-import com.bat.security.filter.TokenAuthFilter;
-import com.bat.security.security.DefaultPasswordEncoder;
-import com.bat.security.security.TokenManager;
-import com.bat.security.security.UnauthEntryPoint;
+import com.cnsa.security.filter.MyUsernamePasswordAuthenticationFilter;
+import com.cnsa.security.filter.TokenAuthFilter;
+import com.cnsa.security.security.DefaultPasswordEncoder;
+import com.cnsa.security.security.TokenManager;
+import com.cnsa.security.security.UnauthEntryPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -15,7 +15,6 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.stereotype.Component;
 
 @Configuration
 @EnableWebSecurity

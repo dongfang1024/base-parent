@@ -1,52 +1,31 @@
 package com.cnsa.acl.entity;
 
-import com.baomidou.mybatisplus.annotation.*;
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.time.Instant;
 
-@ApiModel(value="User对象", description="用户表")
+@ApiModel("角色权限表")
+@Accessors(chain = true)
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("user")
-public class User implements Serializable {
+@TableName("role_permission")
+public class RolePermission implements Serializable {
 
-    private static final long serialVersionUID = -3956386597410281137L;
+    private static final long serialVersionUID = -2406541931091464020L;
 
-    /**
-     * 主键
-     */
-    @TableId(value="id", type= IdType.AUTO)
     private Long id;
 
-    /**
-     * 用户名
-     */
-    private String username;
+    private Long roleId;
 
-    /**
-     * 密码
-     */
-    private String password;
-
-    /**
-     * 昵称
-     */
-    private String nickname;
-
-    /**
-     * 头像
-     */
-    private String profilePicture;
-
-    /**
-     * 创建人
-     */
-    private String createdBy;
+    private Long permissionId;
 
     /**
      * 创建时间
@@ -70,6 +49,5 @@ public class User implements Serializable {
      */
     @ApiModelProperty(value = "逻辑删除 1（true）已删除， 0（false）未删除")
     private Boolean deleted;
-
 
 }

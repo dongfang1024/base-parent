@@ -1,4 +1,4 @@
-package com.bat.security.security;
+package com.cnsa.security.security;
 
 
 import io.jsonwebtoken.CompressionCodecs;
